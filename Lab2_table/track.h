@@ -4,6 +4,7 @@
 #include <SFML/Audio.hpp>
 class track {
 public:
+	track() = default;
 	track(std::string&& name, std::string&& poster, std::string&& music_file);
 	void show() const;
 	void play() const;

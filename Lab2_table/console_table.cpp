@@ -1,4 +1,5 @@
 #include "console_table.h"
+#include <string>
 
 
 //format of command is /show 3 - show 3 key; /play 3 - play 3 key
