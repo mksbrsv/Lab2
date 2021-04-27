@@ -10,7 +10,6 @@ class table_iterator {
 public:
 	table_iterator(const table_iterator& it);
 	table_iterator& operator=(const table_iterator& it);
-	~table_iterator();
 	bool operator!=(const table_iterator& it);
 	bool operator==(const table_iterator& it);
 	table_record<Key, Value>& operator*() const;
@@ -27,14 +26,11 @@ table_iterator<Key, Value>::table_iterator(const table_iterator& it) : m_curr(it
 
 template <class Key, class Value>
 table_iterator<Key, Value>& table_iterator<Key, Value>::operator=(const table_iterator& it) {
-	m_curr = it.m_curr;
+	if (this != &it)
+		m_curr = it.m_curr;
 	return *this;
 }
 
-template <class Key, class Value>
-table_iterator<Key, Value>::~table_iterator() {
-	delete m_curr;
-}
 
 template <class Key, class Value>
 bool table_iterator<Key, Value>::operator!=(const table_iterator& it) {

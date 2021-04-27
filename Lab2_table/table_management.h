@@ -3,9 +3,9 @@
 #include "table_iterator.h"
 #include "table_organization.h"
 #include "table_record.h"
-#include "table_iterator.h"
 template <class Key, class Value>
 class table_management : public table_organization<Key, Value> {
+	using table_organization<Key, Value>::iterator;
 public:
 	table_management();
 	explicit table_management(size_t size = 25);
@@ -15,7 +15,7 @@ public:
 	// move
 	table_management(table_management&& manager) noexcept;
 	table_management& operator=(table_management&& manager) noexcept;
-	virtual ~table_management();
+	~table_management() override;
 	bool empty() override;
 	bool full() override;
 	size_t get_data_count() override;
@@ -24,8 +24,6 @@ public:
 	table_iterator<Key, Value> begin() override;
 	table_iterator<Key, Value> end() override;
 protected:
-	using table_organization<Key, Value>::iterator;
-	using table_organization<Key, Value>::const_iterator;
 	table_record<Key, Value>* m_table;
 	size_t m_size;
 	size_t m_count;
@@ -41,7 +39,7 @@ table_management<Key, Value>::table_management() :
 
 template <class Key, class Value>
 table_management<Key, Value>::table_management(size_t size) :
-	m_table(new table_record<Key, Value>[size]()),
+	m_table(new table_record<Key, Value>[size]),
 	m_size(size),
 	m_count(0),
 	m_current_position(m_table){
@@ -74,10 +72,12 @@ template <class Key, class Value>
 table_management<Key, Value>::table_management(table_management&& manager) noexcept :
 	m_table(manager.m_table),
 	m_count(manager.m_count),
-	m_size(manager.m_size) {
+	m_size(manager.m_size),
+	m_current_position(manager.m_current_position){
 	manager.m_table = nullptr;
 	manager.m_count = 0;
 	manager.m_size = 0;
+	manager.m_current_position = iterator(nullptr);
 }
 
 template <class Key, class Value>
@@ -95,6 +95,7 @@ template <class Key, class Value>
 table_management<Key, Value>::~table_management() {
 	m_count = 0;
 	m_size = 0;
+	m_current_position = table_iterator<Key, Value>(nullptr);
 	delete[] m_table;
 }
 
