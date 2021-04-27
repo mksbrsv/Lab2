@@ -133,5 +133,6 @@ template <class Key, class Value>
 table_iterator<Key, Value> table_management<Key, Value>::end() {
 	return iterator(m_table + m_count);
 }
+
 #endif
 
