@@ -13,7 +13,7 @@ public:
 		return m_key > table_record.m_key;
 	}
 	friend std::ostream& operator<<(std::ostream& out, const table_record<Key, Value>& table_record) {
-		out << table_record.m_key << " " << table_record.m_value << std::endl;
+		out << table_record.m_key << " " << table_record.m_value;
 		return out;
 	}
 	Key key() { return m_key; }

@@ -1,0 +1,6 @@
+4 ACDC-Thunderstruck C:\Users\arryo\Pictures\unn.png C:\Users\arryo\Pictures\song.wav
+2 Hello-Thunderstruck C:\Users\arryo\Pictures\unn.png C:\Users\arryo\Pictures\song.wav
+5 ACDC-Thunderstruck C:\Users\arryo\Pictures\unn.png C:\Users\arryo\Pictures\song.wav
+6 ACDC-Thunderstruck C:\Users\arryo\Pictures\unn.png C:\Users\arryo\Pictures\song.wav
+3 ACDC-Thunderstruck C:\Users\arryo\Pictures\unn.png C:\Users\arryo\Pictures\song.wav
+1 ACDC-Thunderstruck C:\Users\arryo\Pictures\unn.png C:\Users\arryo\Pictures\song.wav
