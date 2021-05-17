@@ -88,7 +88,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <LanguageStandard>stdcpp17</LanguageStandard>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -145,6 +145,7 @@
     <ClInclude Include="hash_table.h" />
     <ClInclude Include="sort_table.h" />
     <ClInclude Include="table.h" />
+    <ClInclude Include="table_hash_management.h" />
     <ClInclude Include="table_iterator.h" />
     <ClInclude Include="table_management.h" />
     <ClInclude Include="table_organization.h" />

@@ -42,6 +42,9 @@
     <ClInclude Include="hash_table.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="table_hash_management.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">

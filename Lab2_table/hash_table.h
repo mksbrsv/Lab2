@@ -2,8 +2,6 @@
 #define HASH_TABLE_H
 #include "table.h"
 
-template<class Key>
-int hash(const Key& key) {}
 
 template <class Key, class Value> class hash_table : public table<Key, Value> {
 public:
